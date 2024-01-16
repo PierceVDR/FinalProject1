@@ -1,0 +1,48 @@
+body {
+    background-color: #292929;
+    color: white;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+form {
+    text-align: center;
+}
+
+td {
+    outline-style: solid;
+    outline-color: white;
+    outline-width: 2px;
+
+    padding: 5px;
+}
+
+.tableLabel {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    padding: 16px;
+}
+
+span {
+    display: flex;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+
+    color: white;
+    font-size: 23px;
+
+    background-color: #434343;
+
+    outline-style: solid;
+    outline-color:white;
+    outline-width: 1px;
+
+    
+}

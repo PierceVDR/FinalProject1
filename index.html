@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Final Project</title>
+</head>
+<body>
+    <form id="diceForm">
+        <label for="numDice">How many dice do you want to roll?</label> <br>
+        <select required name="numDice" id="numDice" form="diceForm">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+
+        <br><br>
+       
+        <label for="numRolls">How many times do you want to roll the die/dice?</label> <br>
+        <input required type="number" min="1" id="numRolls" name="numRolls" form="diceForm"></textarea>
+   
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <br>
+
+    <div>
+        <table> <!-- Implementing not currently a priority -->
+            <tr>
+                <td>Die1</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+        </table>
+        
+        <span>
+
+            <table>
+                <tr>
+                    <td colspan=2 class="tableLabel">Statistics</td>
+                </tr>
+                <tr>
+                    <td>Mode:</td>
+                    <td id="mode">---</td>
+                </tr>
+                <tr>
+                    <td>Mean:</td>
+                    <td id="mean">---</td>
+                </tr>
+                <tr>
+                    <td>Median:</td>
+                    <td id="median">---</td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td colspan=2 class="tableLabel">Frequencies</td>
+                </tr>
+                <tr>
+                    <td>1:</td>
+                    <td id="1">---</td>
+                </tr>
+                <tr>
+                    <td>2:</td>
+                    <td id="2">---</td>
+                </tr>
+                <tr>
+                    <td>3:</td>
+                    <td id="3">etc.</td>
+                </tr>
+            </table>
+
+        </span>
+    </div>
+
+    
+    <script src="/scripting.js"></script>
+</body>
+</html>
