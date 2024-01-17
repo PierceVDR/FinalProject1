@@ -2,6 +2,11 @@ form = document.getElementById("diceForm");
 var rollSums;
 var occurances;
 
+var mean;
+var median;
+var mode;
+var frequencies;
+
 form.addEventListener("submit", function (p) {
     p.preventDefault();
   
@@ -29,6 +34,7 @@ form.addEventListener("submit", function (p) {
 
     rollDice(numDice, numRolls)
 
+    presentResults();
 });
 
 function rollDice(numDice, numRolls) {
@@ -51,10 +57,10 @@ function rollDice(numDice, numRolls) {
     }
 
     // MEAN:
-    var mean = totalSum/numRolls;
+    mean = totalSum/numRolls;
 
     // MEDIAN:
-    var median=-1;
+    median=-1;
     var halfwayCount = numRolls/2.0
     var curOccurance = 0
     while (median==-1) {
@@ -75,8 +81,21 @@ function rollDice(numDice, numRolls) {
         curOccurance++;
     }
 
+    // MODE:
+    var max=-1;
+    var maxIdx=[];
+    for (i=0; i<occurances.length; i++) {
+        if (occurances[i]>max) {
+            max=occurances[i];
+            maxIdx=[i];
+        } else if (occurances[i]==max) {
+            maxIdx.push(i);
+        }
+    }
+    mode=maxIdx.map( v=>v+parseInt(numDice) );
+
     // FREQUENCIES:
-    var frequencies={};
+    frequencies={};
     for (var idx in occurances) {
         frequencies[  parseInt(idx)+parseInt(numDice) ] = occurances[idx]/numRolls;
     }
@@ -85,6 +104,12 @@ function rollDice(numDice, numRolls) {
     console.log("OCCURANCES: "+occurances);
     console.log("MEAN: "+mean);
     console.log("MEDIAN: "+median);
+    console.log("MODE(S): ");
+    console.log(mode);
     console.log("FREQS: ");
     console.log(frequencies);
+}
+
+function presentResults() {
+
 }
