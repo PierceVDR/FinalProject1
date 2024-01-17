@@ -7,6 +7,12 @@ var median;
 var mode;
 var frequencies;
 
+const meanElem=document.getElementById("mean");
+const medianElem=document.getElementById("median");
+const modeElem=document.getElementById("mode");
+
+
+
 form.addEventListener("submit", function (p) {
     p.preventDefault();
   
@@ -111,5 +117,7 @@ function rollDice(numDice, numRolls) {
 }
 
 function presentResults() {
-
+    meanElem.innerHTML=Math.round(mean*100)/100;
+    medianElem.innerHTML=median;
+    modeElem.innerHTML=mode.join(", ");
 }
